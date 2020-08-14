@@ -1,13 +1,15 @@
 users テーブル
 
-| Column         | Type   | Options     |
-| -------------- | ------ | ----------- |
-| name           | string | null: false |
-| email          | string | null: false |
-| password       | string | null: false |
-| first_name     | string | null: false |
-| family_name    | string | null: false |
-| birth_day      | date   | null: false |
+| Column              | Type   | Options     |
+| ------------------- | ------ | ----------- |
+| name                | string | null: false |
+| email               | string | null: false |
+| password            | string | null: false |
+| first_name          | string | null: false |
+| family_name         | string | null: false |
+| birth_day           | date   | null: false |
+| first_name_kana     | string | null: false |
+| family_name_kana    | string | null: false |
 
 Association
 
@@ -25,17 +27,19 @@ items テーブル
 | ---------------- | --------- | ----------- |
 | name             | string    | null: false |
 | introduction     | text      | null: false |
-| category         | integer   | null: false,foreigh_key: true |
-| item_condition   | integer   | null: false,foreigh_key: true |    
-| delivery_charge  | integer   | null: false,foreigh_key: true | 
-| form_area        | integer   | null: false,foreigh_key: true | 
-| delivery_time    | integer   | null: false,foreigh_key: true | 
+| category         | integer   | null: false |
+| item_condition   | integer   | null: false |    
+| delivery_charge  | integer   | null: false | 
+| form_area        | integer   | null: false | 
+| delivery_time    | integer   | null: false | 
 | price            | integer   | null: false |
-| users_id         |
+| users_id         | integer   | null: false,foreigh_key: true | 
 
 Association
 
-belongs_to : users
+belongs_to : user
+belongs_to : destination
+
 
 destinations テーブル
 
@@ -50,10 +54,10 @@ destinations テーブル
 
 Association
 
-belongs_to : items
-belongs_to : customers 
+belongs_to : item
+belongs_to : customer
 
 customers テーブル
 
-|user_id |
-|item_id |
+|user_id | integer   | null: false,foreigh_key: true | 
+|item_id | integer   | null: false,foreigh_key: true | 
