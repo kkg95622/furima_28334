@@ -14,7 +14,7 @@ users テーブル
 Association
 
 has_many :items
-has_many :profiles : destroy
+has_many :customer
 
 items テーブル
 
@@ -32,8 +32,8 @@ items テーブル
 
 Association
 
-belongs_to : user
-belongs_to : customer
+has_one : user
+has_one : customer
 
 destinations テーブル
 
