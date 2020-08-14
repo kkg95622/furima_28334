@@ -5,16 +5,28 @@ users テーブル
 | name                | string | null: false |
 | email               | string | null: false |
 | password            | string | null: false |
+
+Association
+
+has_many :items
+has_many :profieles
+has_many :addresses 
+
+
+profieles テーブル
+
+| Column              | Type   | Options     |
+| ------------------- | ------ | ----------- |
 | first_name          | string | null: false |
 | family_name         | string | null: false |
 | birth_day           | date   | null: false |
 | first_name_kana     | string | null: false |
 | family_name_kana    | string | null: false |
+| users_id            | integer| null: false,foreigh_key: true | 
 
 Association
 
-has_many :items
-has_many :customer
+belongs_to : user
 
 items テーブル
 
@@ -32,30 +44,24 @@ items テーブル
 
 Association
 
-has_one : user
-has_one : customer
+belongs_to : user
 
-destinations テーブル
+addresses テーブル
 
-| Column                    | Type    | Options     |
-| ------------------------- | --------| ------------|
-| post_code                 | string  | null: false |
-| prefecture                | integer | null: false |    
-| city                      | string  | null: false | 
-| address                   | string  | null: false | 
-| phone_number              | string  | null: false |
-| building_name             | string  | null: false | 
-
-Association
-
-belongs_to : customer
-
-customers テーブル
-
-|user_id | integer   | null: false,foreigh_key: true | 
-|item_id | integer   | null: false,foreigh_key: true | 
+| Column                    | Type   | Options     |
+| ------------------------- | -------| ------------|
+| first_name                | string | null: false |
+| family_name               | string | null: false |
+| first_name_kana           | string | null: false |
+| family_name_kana          | string | null: false |
+| post_code                 | string | null: false |
+| prefecture                | integer| null: false |    
+| city                      | string | null: false | 
+| house_number              | string | null: false | 
+| phone_number              | string | 
+| building_name             | string | 
+| users_id                  | integer| null: false,foreigh_key: true | 
 
 Association
 
 belongs_to : user
-belongs_to : item
