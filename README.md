@@ -20,8 +20,8 @@ customers テーブル
 
 | Column              | Type   | Options     |
 | ------------------- | ------ | ----------- |
-| users_id            | 
-| items_id            | 
+| users_id            | integer| null: false,foreigh_key: true | 
+| items_id            | integer| null: false,foreigh_key: true | 
 
 Association
 
@@ -42,7 +42,7 @@ items テーブル
 | form_area        | integer   | null: false | 
 | delivery_time    | integer   | null: false | 
 | price            | integer   | null: false |
-| users_id         | 
+| users_id         | integer| null: false,foreigh_key: true | 
 
 Association
 
@@ -59,8 +59,8 @@ addresses テーブル
 | house_number              | string | null: false | 
 | phone_number              | string | 
 | building_name             | string | 
-| users_id                  | 
+| users_id                  | integer| null: false,foreigh_key: true | 
 
 Association
 
-belongs_to : customers 
+belongs_to : customer
