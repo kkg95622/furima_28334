@@ -15,19 +15,20 @@ Association
 
 has_many :items
 has_many :customers
-has_many :addresses 
-
 
 customers テーブル
 
 | Column              | Type   | Options     |
 | ------------------- | ------ | ----------- |
-| users_id            | integer| null: false,foreigh_key: true | 
-| items_id            | integer| null: false,foreigh_key: true | 
+| users_id            | 
+| items_id            | 
 
 Association
 
 belongs_to : user
+belongs_to : item
+has_one : address
+
 
 items テーブル
 
@@ -41,11 +42,12 @@ items テーブル
 | form_area        | integer   | null: false | 
 | delivery_time    | integer   | null: false | 
 | price            | integer   | null: false |
-| users_id         | integer   | null: false,foreigh_key: true | 
+| users_id         | 
 
 Association
 
 belongs_to : user
+belongs_to : customer
 
 addresses テーブル
 
@@ -57,8 +59,8 @@ addresses テーブル
 | house_number              | string | null: false | 
 | phone_number              | string | 
 | building_name             | string | 
-| users_id                  | integer| null: false,foreigh_key: true | 
+| users_id                  | 
 
 Association
 
-belongs_to : user
+belongs_to : customers 
