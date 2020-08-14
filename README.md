@@ -15,11 +15,6 @@ Association
 
 has_many :items
 has_many :profiles : destroy
-has_many :destination : destroy
-
-Association
-
-belongs_to : user
 
 items テーブル
 
@@ -38,8 +33,7 @@ items テーブル
 Association
 
 belongs_to : user
-belongs_to : destination
-
+belongs_to : customer
 
 destinations テーブル
 
@@ -54,10 +48,14 @@ destinations テーブル
 
 Association
 
-belongs_to : item
 belongs_to : customer
 
 customers テーブル
 
 |user_id | integer   | null: false,foreigh_key: true | 
 |item_id | integer   | null: false,foreigh_key: true | 
+
+Association
+
+belongs_to : user
+belongs_to : item
