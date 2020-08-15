@@ -59,7 +59,7 @@ addresses テーブル
 | house_number              | string | null: false | 
 | phone_number              | string | 
 | building_name             | string | 
-| users_id                  | integer| null: false,foreigh_key: true| 
+| customerid_id                  | integer| null: false,foreigh_key: true| 
 
 Association
 
