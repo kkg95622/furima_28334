@@ -47,7 +47,7 @@ items テーブル
 Association
 
 belongs_to : user
-belongs_to : customer
+has_one : customer
 
 addresses テーブル
 
